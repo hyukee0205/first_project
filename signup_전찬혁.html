@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+
+    <div class="join_box">
+
+      <h2>회원가입</h2>
+
+      <form name="join_form" action="insert.php" method="post" onsubmit="return join_form_check()">
+       
+        <div class="id_box">
+            <label for="u_id" class="left_box">아이디<span class="identify">*</span></label>
+            <input type="text" name="u_id" id="u_id" placeholder="아이디를 입력해주세요">
+        </div>
+        <span class="dsp_txt">* 아이디는 4~12글자만 입력할 수 있습니다.</span>
+        <div>
+          <span class="err_txt" id="err_id"></span>
+        </div>
+
+        <div class="pwd_box">
+            <label for="pwd" class="left_box">비밀번호<span class="identify">*</span></label>
+            <input type="text" name="pwd" id="pwd" placeholder="비밀번호를 입력해주세요">
+        </div>
+        <span class="dsp_txt">* 비밀번호는 4~8글자만 입력할 수 있습니다.</span>
+        <div>
+          <span class="err_txt" id="err_pwd"></span>
+        </div>
+
+        <div class="repwd_box">
+            <label for="repwd" class="left_box">비밀번호 확인<span class="identify">*</span></label>
+            <input type="text" name="repwd" id="repwd" placeholder="비밀번호를 입력해주세요">
+        </div>
+        <div>
+        <span class="err_txt" id="err_repwd"></span>
+        </div>
+
+        <div class="name_box">
+          <label for="u_name" class="left_box">이름<span class="identify">*</span></label>
+          <input type="text" name="u_name" id="u_name" placeholder="이름을 입력해주세요">
+        </div>
+        <div>
+          <span class="err_txt" id="err_name"></span>
+        </div>
+
+        <div class="email_box">
+          <label for="email_id" class="left_box">이메일<span class="identify">*</span></label>
+          <input type="text" name="email_id" id="email_id" placeholder="예 : acemall@ace.com">
+        </div>
+        <div>
+          <span class="err_txt" id="err_email"></span>
+        </div>
+
+
+        <div class="mobile_box">
+            <label for="mobile" class="left_box">휴대폰<span class="identify">*</span></label>
+            <input type="text" name="mobile" id="mobile" placeholder="숫자만 입력해주세요">
+        </div>
+        <span class="dsp_txt">* "-" 없이 숫자만 입력</span>
+
+
+
+        <div>
+            <label for="ps_code">주소<span class="identify">*</span></label>
+            <input type="text" name="ps_code" id="ps_code">
+            <button type="text">주소검색</button><br>
+            <label for="addr_b">기본주소</label>
+            <input type="text" name="addr_b" id="addr_b"><br>
+            <label for="addr_d">상세주소</label>
+            <input type="text" name="addr_d" id="addr_d">
+        </div>
+
+        <div class="gender_box">
+            <div class="left_box">
+            성별
+            </div>
+              <div class="gender_sub_box">
+                <input type="radio" name="gender" id="male" value="m">
+                <label for="male">남</label>
+                <input type="radio" name="gender" id="female" value="f">
+                <label for="male">여</label>
+                <input type="radio" name="gender" id="no" value="n">
+                <label for="male">선택안함</label>
+              </div>
+          </div>
+
+        <div class="birth_box">
+          <label for="birth" class="left_box">생년월일</label>
+          <input type="text" name="birth" id="birth">
+        </div>
+        <span class="dsp_txt">ex)20221031</span>
+
+
+        <div>
+            <input type="checkbox" name="apply" id="apply">
+            <label for="apply">약관 동의 </label>
+        </div>
+
+        <div>
+            <button type="submit">회원가입</button>
+        </div>
+      </form>
+    </div>
+</body>
+</html>

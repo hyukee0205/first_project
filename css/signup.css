@@ -1,0 +1,527 @@
+/* CSS 초기화 */
+body,h1,h2,h3,p,div,ul,li,dl,dt,dd {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Noto Sans","나눔고딕", "맑은 고딕", "돋움";
+  font-size: 14px;
+  color:#222;
+  letter-spacing:-1px;
+  word-spacing:-2px;
+}
+
+body button{
+  font-family: "Noto Sans","나눔고딕", "맑은 고딕", "돋움";
+}
+
+ul,li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #222
+}
+address {
+  font-style: normal;
+}
+button {
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
+}
+.hide {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+}
+
+
+
+
+
+/* 사인업 백그라운드 컬러 지우기 */
+
+
+
+/* form */
+
+
+.signup_box{
+  width: 1200px;
+  margin: auto;
+  background-color: #e8e8e8; 
+}
+
+
+.signup h2{
+    text-align: center;
+    font-size: 28px;
+    padding:80px 0 60px;
+}
+
+.signup_form{
+    width:600px;
+    margin:auto;
+    padding:20px;
+    border-top:1px solid #222;
+    box-sizing: border-box;
+}
+
+.box_sizing{
+    width:120px; height:46px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 46px;
+}
+
+/* .id_box,
+.email_box,
+.phone_box{
+  display: flex;
+  width: 600px;
+  height: 46px;
+  justify-content: space-between;
+  margin:0 auto;
+} */
+
+
+.id_box,
+.email_box,
+.phone_box,
+.pw_box,
+.pw_checkbox,
+.name_box,
+.address_box,
+.gender_box,
+.date_box{
+  display: flex;
+  width: 600px;
+  height: 46px;
+  padding-right:140px;
+  justify-content: space-between;
+  margin:0 auto;
+  box-sizing: border-box;
+}
+
+.address_box,
+.gender_box{
+  margin-bottom:10px;
+}
+
+
+.date_box{  display: flex;
+  width: 600px;
+  height: 46px;
+  padding-right:140px;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.id_sub_box,
+.pw_sub_box{
+  padding:5px 0 20px 140px;
+  color: #6c6c6c;
+}
+
+.pwchk_sub_box,
+.name_sub_box,
+.email_sub_box,
+.phone_sub_box{
+  padding:5px 0 15px 140px;
+}
+
+
+
+
+
+.id_box label, 
+.pw_box label,
+.pw_checkbox label,
+.name_box label,
+.email_box label,
+.phone_box label,
+.address_box label,
+.box_sizing label{
+  display:block;
+  width:120px;
+}
+
+.id_box input,
+.pw_box input,
+.pw_checkbox input,
+.name_box input,
+.email_box input,
+.phone_box input{
+    width:320px; height: 46px;
+    font-size:15px;
+    padding:0 15px 0 15px;
+    border-radius: 3px;
+    border:1px solid rgb(221, 221, 221);
+    box-sizing: border-box;
+}
+
+.date_box input{
+  width:320px; height: 46px;
+  font-size:15px;
+  padding:0 15px 0 15px;
+  text-align: center;
+  border-radius: 3px;
+  border:1px solid rgb(221, 221, 221);
+  box-sizing: border-box;
+}
+
+
+
+
+.id_box button,
+.email_box button{
+    display: block;
+    width:120px; height: 46px;
+    color:#1b8e1d;
+    font-size:14px;
+    font-weight: bold;
+    border-radius: 3px;
+    border:1px solid #1b8e1d;
+    line-height: 44px;
+    box-sizing: border-box;
+}
+
+.phone_box button{
+    display: block;
+    width:120px; height: 46px;
+    color:#6c6c6c;
+    font-size:14px;
+    font-weight: bold;
+    border-radius: 3px;
+    border:1px solid #6c6c6c;
+    line-height: 44px;
+    box-sizing: border-box;
+}
+
+.address_box button{
+  display: block;
+  width:320px; height: 46px;
+  font-size:15px;
+  padding:0 15px 0 15px;
+  font-weight: bold;
+  border-radius: 3px;
+  border:1px solid #1b8e1d;
+  color: #1b8e1d;
+  line-height: 46px;
+  box-sizing: border-box;
+}
+
+.gender_sel_box{
+  display: flex;
+  width:320px; height: 46px;
+  line-height: 46px;
+  font-size:15px;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+
+.test_box1{
+  display: inline-flex;
+  align-items: center;
+}
+
+
+input[type='radio'],
+input[type='radio']:checked {
+  appearance: none;
+  margin: 12px;
+}
+
+input[type='radio'] {
+  width: 24px;
+  height: 24px;
+  display:inline-block;
+  position: relative;
+  border-radius: 50%;
+  background-color: white;
+  border:1px solid rgb(221, 221, 221);
+  box-sizing: border-box;
+}
+input[type='radio']:checked {
+  width: 24px;
+  height: 24px;
+  display:inline-block;
+  position: relative;
+  border: 7px solid #1b8e1d;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+/* 마켓컬리 실패 CSs.. ㅠㅠ.. */
+
+/* .gender_label_m, .gender_label_w, .gender_label_n{
+  position: relative;
+  display:flex;
+  align-items: center;
+}
+
+
+.gender_input{
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0px, 0px, 0px, 0px);
+}
+
+.gd_color1{
+  width: 24px;
+  height: 24px;
+  display:inline-block;
+  position: relative;
+  border-radius: 50%;
+  background-color: white;
+  border:1px solid rgb(221, 221, 221);
+  box-sizing: border-box;
+}
+
+.gd_color1_1{
+  width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+
+
+.gd_color2{
+  width: 24px;
+  height: 24px;
+  display:inline-block;
+  position: relative;
+  border-radius: 50%;
+  background-color: #1b8e1d;
+}
+
+.gd_color2_1{
+  width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+
+.gd_text{
+  margin-left:12px;
+}
+ */
+
+
+
+
+.identify {
+color:#de3c3c;
+}
+
+
+
+
+
+
+
+/* 수정 css 10.19 */
+
+.signup_chkbox{
+  width:640px;
+  margin:auto;
+  padding:20px;
+  border-top: 1px solid #222;
+  display:flex;
+  box-sizing: border-box;
+}
+
+.signup_chkbox0{
+  width:140px;
+  font-size:14px;
+  font-weight: bold;
+}
+
+
+
+.signup_chkbox1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signup_chkbox1_1{
+  display:flex;
+  align-items: center;
+}
+
+.signup_chkbox1_1 label{
+  display:flex;
+  align-items: center;
+}
+
+.signup_chkbox1_1 label i{
+  margin-right:10px;
+}
+
+
+.agree_text_1{
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.agree_text_2{
+  font-size: 12px;
+  padding: 8px 0 0 40px;
+  color: rgb(102, 102, 102);
+  word-spacing:0;
+}
+
+.signup_chkbox2{
+  display: flex;
+  padding: 8px 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signup_chkbox2_1{
+  display:flex;
+  align-items: center;
+}
+
+.signup_chkbox2_1 label{
+  display:flex;
+  align-items: center;
+}
+
+.signup_chkbox2_1 label i{
+  margin-right:10px;
+}
+
+.signup_chkbox2_text{
+  padding-left: 5px;
+  color: #999999;
+}
+
+.more_icons{
+  color:#1b8e1d;
+}
+
+.more_icons::after{
+  content:"";
+  display: inline-block;
+  width:9px;
+  height:9px;
+  background: url("../images/more_icons.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
+
+.signup_check{
+  display: inline-block;
+  width: 30px; height: 30px;
+  position: relative;
+  cursor: pointer;
+  background-image: url(images/check_icon1.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+#chk:checked + .signup_check{
+  background-image: url(images/check_icon2.png);
+}
+
+
+#chk2:checked + .signup_check{
+  background-image: url(images/check_icon2.png);
+}
+
+#chk3:checked + .signup_check{
+  background-image: url(images/check_icon2.png);
+}
+
+#chk4:checked + .signup_check{
+  background-image: url(images/check_icon2.png);
+}
+
+#chk5:checked + .signup_check{
+  background-image: url(images/check_icon2.png);
+}
+
+#chk6:checked + .signup_check{
+  background-image: url(images/check_icon2.png);
+}
+
+
+#chk,#chk2,#chk3,#chk4,#chk5,#chk6
+{ position: absolute; left: -999em; }
+
+
+
+
+
+
+
+
+.signup_submit_box{
+  width: 1200px;
+  margin: auto;
+}
+
+.submit_form{
+  width:700px;
+  margin: auto;
+  padding:40px 0 100px;
+  border-top: 1px solid #e8e8e8;
+}
+
+.signup_btn{
+  width:220px;
+  height: 56px;
+  display: block;
+  margin: auto;
+  background-color: #1b8e1d;
+  text-align: center;
+  border-radius: 3px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.err_txt {
+    font-size: 12px;
+    color:red;
+    font-weight: bold;
+}
+
+.dsp_txt{
+    font-size: 12px;
+    padding-top:5px;
+}
+
+
+
+
+
+
+
+

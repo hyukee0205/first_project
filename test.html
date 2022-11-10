@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="css/signup.css">
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/header.js"></script>
+    <script>
+        function form_check() {
+            var u_id = document.getElementById("u_id");
+            var pw = document.getElementById("pw");
+            var repw = document.getElementById("repw");
+            var u_name = document.getElementById("u_name");
+            var em_id = document.getElementById("em_id");
+            var phone = document.getElementById("phone");
+            var apply = document.getElementById("apply");
+
+
+            if (!u_id.value) {
+                var txt = document.getElementById("err_id");
+                txt.innerHTML = "아이디를 입력하세요.";
+
+                u_id.focus();
+                return false;
+            };
+
+            var id_len = u_id.value.length;
+
+            if (id_len < 4 || id_len > 12) {
+                var txt = document.getElementById("err_id");
+                txt.innerHTML = "아이디는 4~12글자만 입력할 수 있습니다.";
+                u_id.focus();
+                return false;
+            };
+
+
+            if (!pw.value) {
+                var txt = document.getElementById("err_pw");
+                txt.innerHTML = "비밀번호를 입력하세요.";
+
+                pw.focus();
+                return false;
+            };
+
+
+            var pw_len = pw.value.length;
+
+            if (pw_len < 4 || pw_len > 8) {
+                var txt = document.getElementById("err_pw");
+                txt.innerHTML = "비밀번호는 4~8글자만 입력할 수 있습니다.";
+                pw.focus();
+                return false;
+            };
+
+
+
+
+            if (!repw.value) {
+                var txt = document.getElementById("err_repw");
+                txt.innerHTML = "비밀번호를 확인해주세요.";
+                repw.focus();
+                return false;
+            };
+
+
+            if (pw.value != repw.value) {
+                var txt = document.getElementById("err_repw");
+                txt.innerHTML = "비밀번호가 같지 않습니다.";
+                repw.focus();
+                return false;
+            };
+
+
+            if (!u_name.value) {
+                var txt = document.getElementById("err_name");
+                txt.innerHTML = "이름을 입력하세요.";
+
+                u_name.focus();
+                return false;
+            };
+
+
+            if (!em_id.value) {
+                var txt = document.getElementById("err_em");
+                txt.innerHTML = "이메일을 입력하세요.";
+
+                em_id.focus();
+                return false;
+            };
+
+
+
+            if (!phone.value) {
+                var txt = document.getElementById("err_phone");
+                txt.innerHTML = "전화번호를 입력해주세요.";
+
+                phone.focus();
+                return false;
+
+            };
+
+            var reg = /^[0-9]+$/g;
+            if (!reg.test(phone.value)) {
+                var txt = document.getElementById("err_phone");
+                txt.innerHTML = "전화번호는 숫자만 입력할 수 있습니다.";
+                phone.focus();
+                return false;
+            };
+
+            if (!apply.checked) {
+                var txt = document.getElementById("err_apply");
+                txt.innerHTML = "약관 동의가 필요합니다.";
+
+                apply.focus();
+                return false;
+            };
+
+        };
+
+        function id_search() {
+            window.open("id_search.html", "", "width=600,height=300");
+        };
+
+        function email_search() {
+            window.open("email_search.html", "", "width=600,height=300");
+        };
+
+
+        function checkSelectAll(checkbox)  {
+            const selectall 
+                = document.querySelector('input[name="selectall"]');
+            
+            if(checkbox.checked === false)  {
+                selectall.checked = false;
+            }
+        }
+
+        function selectAll(selectAll)  {
+            const checkboxes 
+                = document.getElementsByName('sub_chk');
+            
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = selectAll.checked
+            })
+        }  
+
+
+
+    </script>
+</head>
+<body>
+
+
+    
+    <div class="signup_box">
+        <div class="signup">
+            <h2>회원가입</h2>
+        </div>
+
+        <form name="join_form" class="signup_form" action="insert.php" method="get" onsubmit="return form_check()">
+            <div class="id_box">
+                <div class="box_sizing">
+                    <label for="u_id">
+                        아이디<span class="identify">*</span>
+                    </label>
+                </div>
+                <input type="text" name="u_id" id="u_id" placeholder="아이디를 입력해주세요">            </div>
+            <div class="id_sub_box">
+                <span class="dsp_txt">* 아이디는 4~12글자만 입력할 수 있습니다.</span>
+                <br><span class="err_txt" id="err_id"></span>
+            </div>
+
+
+            <div class="pw_box">
+                <div class="box_sizing">
+                    <label for="pw">
+                        비밀번호<span class="identify">*</span>
+                    </label>
+                </div>
+                <input type="password" name="pw" id="pw" placeholder="비밀번호를 입력해주세요">
+            </div>
+            <div class="pw_sub_box">
+                <span class="dsp_txt">* 비밀번호는 4~8글자만 입력할 수 있습니다.</span>
+                <br><span class="err_txt" id="err_pw"></span>
+            </div>
+
+
+
+            <div class="pw_checkbox">
+                <div class="box_sizing">
+                    <label for="repw">
+                        비밀번호확인<span class="identify">*</span>
+                    </label>
+                </div>
+                <input type="password" name="repw" id="repw" placeholder="비밀번호를 입력해주세요">
+            </div>
+            <div class="pwchk_sub_box">
+                <span class="err_txt" id="err_repw"></span>
+            </div>
+
+
+            <div class="name_box">
+                <div class="box_sizing">
+                    <label for="u_name">
+                        이름<span class="identify">*</span>
+                    </label>
+                </div>
+                <input type="text" name="u_name" id="u_name" placeholder="이름을 입력해주세요">
+            </div>
+            <div class="name_sub_box">
+                <span class="err_txt" id="err_name"></span>
+            </div>
+
+
+
+            <div class="email_box">
+                <div class="box_sizing">
+                    <label for="em">
+                        이메일<span class="identify">*</span>
+                    </label>
+                </div>
+                <input type="text" name="em_id" id="em_id" placeholder="예 : acemall@ace.com">
+            </div>
+            <div class="email_sub_box">
+                <span class="err_txt" id="err_em"></span>
+            </div>
+
+
+
+
+            <div class="phone_box">
+                <div class="box_sizing">
+                    <label for="phone">
+                        휴대폰<span class="identify">*</span>
+                    </label>
+                </div>
+                <input type="text" name="phone" id="phone" placeholder="숫자만 입력해주세요">
+            </div>
+            <div class="phone_sub_box">
+                <span class="err_txt" id="err_phone"></span>
+            </div>
+
+
+            <div class="address_box">
+                <div class="box_sizing">
+                    <label for="address">
+                        주소<span class="identify">*</span>
+                    </label>
+                </div>
+                <button type="button">주소 검색</button>
+            </div>
+
+            <div class="gender_box">
+                <div class="box_sizing">
+                    <label for="label_gender">
+                        성별
+                    </label>
+                </div>
+                
+                <div class="gender_sel_box">
+                    <div class="test_box1">
+                        <input type="radio" name="gender" id="gender_man" value="MALE">
+                        <label for="gender_man" class="gender_label_m">남자</label>
+                    </div>
+
+                    <div class="test_box1">
+                        <input type="radio" name="gender" id="gender_woman" value="FEMALE">
+                        <label for="gender_woman" class="gender_label_w">여자</label>                      
+                    </div>
+
+                    <div class="test_box1">
+                        <input type="radio" name="gender" id="gender_none" value="NONE" checked>
+                        <label for="gender_none" class="gender_label_n">선택안함</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="date_box">
+                <div class="box_sizing">
+                    <label for="label_date">
+                        생년월일
+                    </label>
+                </div>
+                <input type="text" name="user_date" id="user_date" placeholder="YYYYMMDD">
+            </div>
+        </form>
+
+
+
+        <div class="signup_chkbox">
+            <div class="signup_chkbox0">
+                <p>이용약관동의<span class="identify">*</span></p>
+            </div>
+      
+            <div class="signup_chkbox_rbox">
+                <form name="join_form" action="insert.php" method="get" onsubmit="return form_check()">
+      
+      
+                  <div>
+                    <div class="signup_chkbox1">
+                      <div class="signup_chkbox2_1">
+                          <label for="chk">
+                              <input 
+                              type="checkbox" 
+                              id="chk"
+                              name='selectall' 
+                              value='selectall'
+                              onclick="selectAll(this)">
+                              <i class="signup_check"></i>
+                              <span class="agree_text_1">전체 동의합니다.</span>
+                          </label>
+                      </div>           
+                    </div>
+                    <div class="agree_text_2">선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</div>
+                  </div>  
+                  <br><span class="err_txt" id="err_apply"></span>
+      
+      
+      
+                  <div class="signup_chkbox2">
+                      <div class="signup_chkbox2_1">
+                          <label for="chk2">
+                            
+                              <input type="checkbox" 
+                              id="chk2"
+                              name='sub_chk' 
+                              value='dog'
+                              onclick='checkSelectAll(this)'>
+      
+                              <i class="signup_check"></i>
+                              <span>이용약관 동의</span>
+                          </label>
+                          <span class="signup_chkbox2_text">
+                            (필수)
+                          </span> 
+                      </div>           
+                      <a  class="more_icons" href="">
+                        약관보기
+                      </a>
+                  </div>
+      
+                  <div class="signup_chkbox2">
+                      <div class="signup_chkbox2_1">
+                          <label for="chk3">
+                              <input type="checkbox" 
+                              id="chk3"
+                              name='sub_chk' 
+                              value='dog'
+                              onclick='checkSelectAll(this)'>
+                              <i class="signup_check"></i>
+                              <span>개인정보 수집·이용 동의</span>
+                          </label>
+                          <span class="signup_chkbox2_text">
+                            (필수)
+                          </span> 
+                      </div>           
+                      <a  class="more_icons" href="">
+                        약관보기
+                      </a>
+                  </div>
+      
+                  <div class="signup_chkbox2">
+                      <div class="signup_chkbox2_1">
+                          <label for="chk4">
+                              <input type="checkbox" 
+                              id="chk4"
+                              name='sub_chk' 
+                              value='dog'
+                              onclick='checkSelectAll(this)'>
+                              <i class="signup_check"></i>
+                              <span>개인정보 수집·이용 동의</span>
+                          </label>
+                          <span class="signup_chkbox2_text">
+                            (선택)
+                          </span> 
+                      </div>           
+                      <a class="more_icons" href="">
+                        약관보기
+                      </a>
+                  </div>
+      
+                  <div class="signup_chkbox2">
+                      <div class="signup_chkbox2_1">
+                          <label for="chk5">
+                              <input type="checkbox" 
+                              id="chk5"
+                              name='sub_chk' 
+                              value='dog'
+                              onclick='checkSelectAll(this)'>
+                              <i class="signup_check"></i>
+                              <span>무료배송, 할인쿠폰 등 혜택/정보 수신 동의</span>
+                          </label>
+                          <span class="signup_chkbox2_text">
+                            (선택)
+                          </span> 
+                      </div>           
+                  </div>
+      
+                  
+                  <div class="signup_chkbox2">
+                      <div class="signup_chkbox2_1">
+                          <label for="chk6">
+                              <input type="checkbox" 
+                              id="chk6"
+                              name='sub_chk' 
+                              value='dog'
+                              onclick='checkSelectAll(this)'>
+                              <i class="signup_check"></i>
+                              <span>본인은 만 14세 이상입니다.</span>
+                          </label>
+                          <span class="signup_chkbox2_text">
+                            (필수)
+                          </span> 
+                      </div>           
+                  </div>
+      
+              </form>
+          </div>
+      </div>
+      
+
+
+
+
+        <div class="signup_submit_box">
+            <form name="join_form" class="submit_form" action="insert.php" method="get" onsubmit="return form_check()">
+                <button class="signup_btn" type="submit">가입하기</button>
+            </form>
+        </div>
+    </div>
+
+    
+</body>
+</html>
